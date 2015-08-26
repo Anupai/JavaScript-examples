@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+<script type="text/javascript">
+
+function checkbox()
+{
+     var inputs = document.getElementsByClassName('sum'),
+        total  = document.getElementById('payment-total');
+        total1 = document.getElementById('');
+         for (var i=0; i < inputs.length; i++) {
+                inputs[i].onchange = function() {
+                 var add = this.value * (this.checked ? 1 : -1);
+                 total.innerHTML = parseInt(total.innerHTML) + add
+                 total1.innerHTML = parseInt(total1.innerHTML) + add   
+                }
+            } 
+}   
+</script>
+</head>
+<body onload="checkbox();">
+<form>
+<input value="2500" type="checkbox" class="sum" id="gold" > gold
+<input value="50"  type="checkbox" class="sum" "silver"> silver
+<input value="10"   type="checkbox" class="sum"> gift vocher
+
+<p id="payment-total"></p> 
+ 
+</form> 
+</body>
+</html>

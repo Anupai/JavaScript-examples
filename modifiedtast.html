@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<h1>CONTACT US</h1>
+<script type="text/javascript">
+function validateForm() 
+{
+	//This is called DOM Object(Document object model)
+   var x=document.getElementById("name").value;
+   var y=document.getElementById("phone").value;
+       
+       var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;  
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+      if (x == "") 
+	{
+	   alert("Please enter the name");
+        return false;
+    }
+	if (y == "")
+	{
+		alert("please enter the number");
+		return false;
+		}
+			if(! document.getElementById('phone').value.match(phoneno)){
+	alert("Entry must be a 10 digit number");
+	return false;
+	}
+			if(! document.getElementById('email').value.match(mailformat)){
+	alert("Entry must be a vaild mail format");
+	return false;
+	}
+	else 
+	{
+		return true;
+	}
+}
+	
+</script>
+
+</head>
+</form>
+Name:<input type="text" name="NAME" id="name"><br>
+<br>
+phone:<input type="text" name="phone" id="phone" ><br>
+<br>
+Email:<input type="text" NAME="email" id="email" required><br>
+<br>
+Date: <input type="date" name="date" id="Date" required><br>
+<br>
+Qualification:<input type="radio" name="qualification" value="UG" checked>UG<br>
+<br>
+<input type="radio" name="qualification" value="PG">PG
+<br>
+<input type="button"  value="submit" onclick='validateForm()' ><br>
+</form>
+<body bgcolor="aqua">
+</body>
+</html>

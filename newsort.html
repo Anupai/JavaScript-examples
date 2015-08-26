@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var n= new Array(); 
+for(var i=0;i<=4;i++)
+{
+  
+   n[i]=prompt('Enter a  num!',' ');      
+
+}
+
+document.write("Entered numbers are:" +n);
+  document.write("<br>");
+
+    n.sort(function(a, b){return a-b});
+
+    document.write("The ascen order is:" ,"" +n);
+     document.write("<br>")
+
+    n.sort(function(a, b){return b-a});
+    document.write("The descending order is:" +n);
+     
+     </script>
+
+</body>
+</html>

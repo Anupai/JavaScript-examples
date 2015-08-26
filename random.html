@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function randomNum() {
+    var num1 = document.getElementById("numb1");
+    var num2 = document.getElementById("numb2");
+    num1.innerHTML = Math.floor(Math.random()*10+1);
+    num2.innerHTML = Math.floor(Math.random()*10+1);
+}
+
+function checkMath() {
+    var num1 = parseInt(document.getElementById("numb1").innerHTML);
+    var num2 = parseInt(document.getElementById("numb2").innerHTML);
+    var answer = parseInt(document.getElementById("answer").value);
+    if (answer == num1 + num2) {
+        alert("correct");
+    } else {
+        alert(answer + " is incorrect, please enter correct answer ");
+        location.reload();
+    }
+    
+
+}
+</script>
+</head>
+<body onLoad="randomNum();">
+<table border="2px">
+<tr>
+<td id="numb1"></td>
+<td>+</td>
+<td id="numb2"></td>
+</tr>
+</table>
+
+<form id="problem"><p><input id="answer" value=""></p>
+<input type="button" onclick="checkMath();" value="Check Answer"></form>
+
+</body>
+</html>

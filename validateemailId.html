@@ -1,0 +1,26 @@
+ <html>
+ <head>
+ <script type="text/javascript">
+     function formValidation() {
+
+         var emailId = document.getElementById("txtEmail").value;
+         var txtEmail = /^\w+(\d[\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(emailId=="")
+        {
+          alert("please enter the mail id")
+        }
+         if (!document.getElementById('txtEmail').value.match(txtEmail)) {
+             alert("entry must be a valid mail id");
+             return false;
+         }
+            return true;
+     }
+
+</script>
+</head>
+<body>
+mail id :<input type="text" id="txtEmail">
+<input type="submit" onmousedown="formValidation();">
+</body>
+</function>
+ 

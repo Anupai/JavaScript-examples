@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+Enter the text: <input type="text" name="name" id="name" onkeypress="key()"><br>
+<br>
+Entered text is: <span id="task"></span>
+<script type="text/javascript">
+function key()
+{
+	var x =document.getElementById("name").value;
+	document.getElementById('task').innerHTML = x;
+}
+</script>
+</body>
+</html>

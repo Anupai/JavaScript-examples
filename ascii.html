@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+<HTML>
+<head></head>
+<body>
+<label>Enter the character</label>
+ <input type="text" size="100" onkeypress="myFunction(event)">
+=======
+<input type="text" size="100" onkeypress="myFunction(event)">
+>>>>>>> abe8443cc6bb46a138a421652f5bd0fa2f0e8ad4
+
+<p id="demo"></p>
+
+<script>
+/* In this example, we use a cross-browser solution, because the keyCode property does not work on the onkeypress event in Firefox. However, the which property does.
+
+Explanation of the first line in the function below: if the browser supports event.which, then use event.which, otherwise use event.keyCode */
+
+function myFunction(event) {
+    var x = event.which || event.keyCode;
+    document.getElementById("demo").innerHTML = "The Unicode value is: " + x;
+}
+</script>
+
+</body>
+</html>

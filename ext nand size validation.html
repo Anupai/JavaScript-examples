@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+var allowedExtensions = {
+  '.doc'  : true,
+  '.DOC'   : true,
+  '.DOCX' :true,
+  '.docx' :true,
+  '.pdf':true,
+  '.PDF' :true,
+  '.TXT' :true,
+  '.txt':true
+};
+
+function checkExtension(filename) 
+{
+    var match = /\..+$/;
+    var ext = filename.match(match);
+    if (allowedExtensions[ext]) 
+    {
+      return true;
+    } 
+    else 
+    {
+    alert("File must be DOCX or DOC or PDF or TXT");
+    //will clear the file input box.
+    location.reload();
+    return false;
+    }
+}
+function chkSize()
+{
+
+ var inputFile = document.getElementById('file1');
+
+ for (var i = 0; i < inputFile .files.length; i++) 
+ {  
+                    
+       var file = inputFile .files[i];
+			if ('size') 
+                    {
+                      
+                               var sz=file.size/(1024*1024);
+                      
+                                  //RESTRICTING UPLOAD FILE SIZE TO 1MB
+
+                                 if(sz >=1)
+                                 {
+                                 alert('Document is not UPLOADED. Maximum file size is restricted to 1MB.Please try again Uploading other document!!');
+                                  location.reload();
+                               return false;
+                                 }
+                       
+                          }
+ }
+
+}
+</script>
+</head>
+<body>
+<input type="file" value="choose a file" id="file1" onchange="checkExtension(this.value);">
+<input type="submit" value="submit" onclick="chkSize();">
+
+</body>
+</html>

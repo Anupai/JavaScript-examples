@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+<html>
+=======
+ <html>
+>>>>>>> abe8443cc6bb46a138a421652f5bd0fa2f0e8ad4
+<head>
+<script language="javascript" type="text/javascript">
+function limitText(limitField, limitCount, limitNum) {
+    if (limitField.value.length > limitNum) {
+        limitField.value = limitField.value.substring(0, limitNum);
+    } else {
+        limitCount.value = limitNum - limitField.value.length;
+    }
+}
+</script>
+</head>
+ <form name="myform">
+<input name="limitedtextfield" type="text" onKeyDown="limitText(this.form.limitedtextfield,this.form.countdown,25);" 
+onKeyUp="limitText(this.form.limitedtextfield,this.form.countdown,25);" maxlength="25"><br>
+<font size="3">(Maximum characters: 25)<br>
+You have <input readonly type="text" name="countdown" size="4" value="25"> characters left.</font>
+</form>
+</html>
